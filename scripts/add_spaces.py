@@ -5,6 +5,6 @@ for f in Path('.').glob('*.txt'):
     content = f.read_text()
     idx = content[:content.find(':')].rfind('\n') -1
     no_notes, notes = content[:idx], content[idx:]
-    no_notes = no_notes.replace('\n', ' ')
+    no_notes = no_notes.replace(' ', ' \n')
     content = no_notes + notes
     f.write_text(content)
